@@ -1,1 +1,29 @@
-Prueba
+#/.github/workflows 
+name: CI-JAVASCRIPT
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispach:
+
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [14.x]
+      steps:
+        - uses: actions/checkout@v2
+        - name: Instalar Node JS
+          uses: acions/setup-node@master
+          with:
+            node-version: ${{ matrix.node-version }}
+        - name: Instalar paquetes npm
+          run: |
+            npm install
+            npm ci
+        - name: Compilar y ejecutar
+          run: |
+              npm run build
+              npm run test
