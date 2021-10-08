@@ -25,5 +25,4 @@ jobs:
             npm ci
         - name: Compilar y ejecutar
           run: |
-            npm run build
             npm run test
