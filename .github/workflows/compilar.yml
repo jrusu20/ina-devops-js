@@ -10,10 +10,10 @@ on:
 jobs:
   build_test:
     runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          node-version: [14.x]
-      steps:
+    strategy:
+     matrix:
+       node-version: [14.x]
+    steps:
         - uses: actions/checkout@v2
         - name: Instalar Node JS
           uses: acions/setup-node@master
