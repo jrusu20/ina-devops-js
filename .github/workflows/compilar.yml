@@ -16,7 +16,7 @@ jobs:
     steps:
         - uses: actions/checkout@v2
         - name: Instalar Node JS
-          uses: acions/setup-node@master
+          uses: actions/setup-node@master
           with:
             node-version: ${{ matrix.node-version }}
         - name: Instalar paquetes npm
